@@ -32,3 +32,12 @@ Python é uma linguagem dinâmica e fortemente tipada.
 
 O Python utiliza a indentação para estruturar os blocos, ou seja, não é preciso abrir e fechar chaves ``{}`` para delimitar o início e fim de uma função por exemplo.
 
+- Principais Frameworks e libs do Python:
+    - Desenvolvimento **Web**: Django, Flask, CherryPy e o web2py.
+    - Desenvolvimento de **Games**: Pygame e o Pyxel.
+    - Desenvolvimento **Científico, Data Science e Machine Learning**: Scikit-learn (SciPy e NumPy), Anaconda e TensorFlow, Keras, Pytorch, Theano, Pandas, Matplotlib, Caffe, Microsoft Cognitive e o Spark.
+
+O pip é o gerenciador de pacotes Python e serve para instalar bibliotecas.
+
+---
+
