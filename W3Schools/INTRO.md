@@ -44,3 +44,9 @@ Python usa novas linhas para completar um comando, ao contrário de outras lingu
 O Python depende da indentação, usando espaços em branco, para definir o escopo, como o escopo de loops, funções e classes. Outras linguagens de programação costumam usar colchetes para essa finalidade.
 
 ---
+
+```
+print("Hello, World!")
+```
+
+---
