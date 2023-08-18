@@ -44,6 +44,10 @@ O pip é o gerenciador de pacotes Python e serve para instalar bibliotecas.
 
 ## Python Tutorial - W3Schools
 
+Python é uma linguagem de programação popular.
+
+> O Python pode ser usado em um servidor para criar aplicativos da web.
+
 - [Intro](/W3Schools/INTRO.md)
 - [Get Started](/W3Schools/GET_STARTED.md)
 - [Syntax](/W3Schools/SYNTAX.md)
