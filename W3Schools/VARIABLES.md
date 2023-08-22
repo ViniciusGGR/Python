@@ -19,12 +19,15 @@
 - [Descompactar uma coleção](#descompactar-uma-coleção)
 ---
 - [Variáveis de Saída](#variáveis-de-saída)
+---
+- [Variáveis globais](#variáveis-globais)
+- [A palavra-chave global](#a-palavra-chave-global)
 
 ---
 
-Variáveis são "recipientes" para **armazenar valores de dados**.
-
 ## Criando Variáveis
+
+Variáveis são "recipientes" para **armazenar valores de dados**.
 
 - Python não tem "comando" para _declarar uma variável_.
 - Uma **variável** é criada no momento em que se _atribui um valor_ a ela.
@@ -249,3 +252,69 @@ print(z)  # Retorna: cherry
 
 ---
 
+## Variáveis globais
+
+- **Variáveis** criadas _fora de uma função_ são conhecidas como **variáveis globais**.
+- As **variáveis globais** podem ser _usadas por todos_, tanto dentro quanto fora das _funções_:
+    ```
+    # Criando uma variável fora de uma função e usando dentro da função.
+
+    x = "awesome"
+
+    def myfunc():
+        print("Python is " + x)
+
+    myfunc()  # Retorna: Python is awesome
+    ```
+
+- Se criado uma **variável** com o _mesmo nome_ dentro de uma _função_, esta **variável** será _local_, e so poderá ser utilizada **dentro da função**. A **variável global** com o _mesmo nome_ permanecerá como estava, global e com o valor original.
+    ```
+    x = "awesome"
+
+    def myfunc():
+        x = "fantastic"
+        print("Python is " + x)
+
+    myfunc()  # Retorna: Python is fantastic
+
+    print("Python is " + x)  # Retorna: Python is awesome
+    ```
+
+## A palavra-chave global
+
+Normalmente, quando uma **variável** é criada _dentro de uma função_, essa **variável** é _local_ e só pode ser usada _dentro dessa função_.
+
+- Para criar uma **variável global** _dentro de uma função_, é possível usar a **palavra-chave** ``global``:
+    ```
+    # Se utilizado a palavra-chave 'global', a variável pertence ao escopo global
+
+    def myfunc():
+        # Variável global
+
+        global x
+        x = "fantastic"
+
+    myfunc()
+
+    print("Python is " + x)  # Retorna: Python is fantastic
+    ```
+
+    - A **palavra-chave** ``global`` pode ser usada caso queira _alterar uma **variável global** dentro de uma função_.
+
+    ```
+    # Alterando o valor de uma variável global dentro de uma função, consultando a variável usando a palavra-chave 'global'.
+
+    x = "awesome"
+
+    def myfunc():
+        global x
+
+        # Alterando o valor 'awesome' para 'fantastic'
+        x = "fantastic"
+
+    myfunc()
+
+    print("Python is " + x)  # Retorna: Python is fantastic
+    ```
+
+---
