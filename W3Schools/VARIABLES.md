@@ -17,6 +17,8 @@
 - [Muitos valores para várias variáveis](#muitos-valores-para-várias-variáveis)
 - [Um valor para várias variáveis](#um-valor-para-várias-variáveis)
 - [Descompactar uma coleção](#descompactar-uma-coleção)
+---
+- [Variáveis de Saída](#variáveis-de-saída)
 
 ---
 
@@ -186,6 +188,64 @@ print(x)  # Retorna: apple
 print(y)  # Retorna: banana
 print(z)  # Retorna: cherry
 ```
+
+---
+
+## Variáveis de Saída
+
+- No Python a _função_ ``print()`` é frequentemente usada para **variáveis de saída**.
+    ```
+    x = "Python is awesome"
+
+    print(x)  # Retorna: Python is awesome
+    ```
+
+- Na _função_ ``print()``, você "gera/imprime/printa" _várias variáveis_, separadas por vírgula:
+    ```
+    x = "Python"
+    y = "is"
+    z = "awesome"
+
+    print(x, y, z)  # Retorna: Python is awesome
+    ```
+
+    - Também é possível usar o _operador_ ``+`` para "gerar/imprimir/printar" _várias variáveis_.
+
+    ```
+    x = "Python "
+    y = "is "
+    z = "awesome"
+
+    print(x + y + z)  # Retorna: Python is awesome
+    ```
+
+    > **Nota**: Observe o _caractere de espaço_ após ``"Python "`` e ``"is "``, sem eles o **resultado** seria: **``Pythonisawesome``**.
+
+- Para **números**, o _caractere_ ``+`` funciona como um **operador matemático**:
+    ```
+    x = 5
+    y = 10
+
+    print(x + y)  # Retorna: 15
+    ```
+
+- Na _função_ ``print()``, ao tentar "combinar" uma **string** e um **número** com o _operador_ ``+``, o Python vai te dar um **_erro_**:
+    ```
+    x = 5
+    y = "John"
+
+    print(x + y)
+
+    # Retorna: TypeError: unsupported operand type(s) for +: 'int' and 'str'
+    ```
+
+- A "melhor maneira" de "gerar/imprimir/printar" _várias variáveis_ na _função_ ``print()`` é **separá-las com vírgulas**, que até suportam _diferentes tipos de dados_:
+    ```
+    x = 5
+    y = "John"
+
+    print(x, y)  # Retorna: 5 John
+    ```
 
 ---
 
