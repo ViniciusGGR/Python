@@ -86,3 +86,35 @@ Python é uma linguagem de programação popular.
 
 ---
 
+## Python MySQL - W3Schools
+
+- [Get Started]()
+- [Create Database]()
+- [Create Table]()
+- [Insert]()
+- [Select]()
+- [Where]()
+- [Order By]()
+- [Delete]()
+- [Drop Table]()
+- [Update]()
+- [Limit]()
+- [Join]()
+
+---
+
+## Python MongoDB - W3Schools
+
+- [Get Started]()
+- [Create Database]()
+- [Create Collection]()
+- [Insert]()
+- [Find]()
+- [Query]()
+- [Sort]()
+- [Delete]()
+- [Drop Collection]()
+- [Update]()
+- [Limit]()
+
+---
