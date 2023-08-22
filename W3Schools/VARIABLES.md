@@ -13,6 +13,10 @@
     - [Camel Case](#camel-case)
     - [Pascal Case](#pascal-case)
     - [Snake Case](#snake-case)
+---
+- [Muitos valores para várias variáveis](#muitos-valores-para-várias-variáveis)
+- [Um valor para várias variáveis](#um-valor-para-várias-variáveis)
+- [Descompactar uma coleção](#descompactar-uma-coleção)
 
 ---
 
@@ -141,6 +145,47 @@ Cada palavra é _separada_ por um caractere de **sublinhado** (``_``):
     ```
     my_variable_name = "John"
     ```
+
+---
+
+## Muitos valores para várias variáveis
+
+- O Python permite a _atribuição de valores_ a **várias variáveis** em uma linha:
+    ```
+    x, y, z = "Orange", "Banana", "Cherry"
+
+    print(x)  # Retorna: Orange
+    print(y)  # Retorna: Banana
+    print(z)  # Retorna: Cherry
+    ```
+
+    > **Nota**: Certifique-se de que o _número de variáveis_ corresponda ao _número de valores_, caso contrário, ocorrerá um erro.
+
+## Um valor para várias variáveis
+
+- O Python permite _atribuir o mesmo valor_ a **várias variáveis** em uma linha:
+    ```
+    x = y = z = "Orange"
+
+    print(x)  # Retorna: Orange
+    print(y)  # Retorna: Orange
+    print(z)  # Retorna: Orange
+    ```
+
+## Descompactar uma coleção
+
+Se existir uma _coleção de valores_ em uma **lista**, **tupla** etc. O Python permite a _extração dos valores_ em **variáveis**. Isso é chamado de _descompactação_ (``unpacking``).
+
+```
+# Descompactar uma lista:
+
+fruits = ["apple", "banana", "cherry"]
+x, y, z = fruits
+
+print(x)  # Retorna: apple
+print(y)  # Retorna: banana
+print(z)  # Retorna: cherry
+```
 
 ---
 
