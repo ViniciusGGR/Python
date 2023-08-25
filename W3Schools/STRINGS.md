@@ -16,7 +16,15 @@
 - [Slice até o Fim](#slice-até-o-fim)
 - [Indexação Negativa](#indexação-negativa)
 ---
+- [Modificar Strings](#modificar-strings)
+    - [Maiúsculas - Upper Case](#maiúsculas---upper-case)
+    - [Minúsculas - Lower Case](#minúsculas---lower-case)
+    - [Remover espaço em branco - Remove Whitespace](#remover-espaço-em-branco---remove-whitespace)
+    - [Replace String](#replace-string)
+    - [Split String](#split-string)
+---
 - []()
+
 
 ---
 
@@ -227,3 +235,54 @@ print(b[2:])
 
 ---
 
+## Modificar Strings
+
+Python possui um _conjunto de métodos integrados_ que podem ser utilizados em **strings**.
+
+### Maiúsculas - Upper Case
+
+- O _método_ ``upper()`` retorna a **string** em _letras maiúsculas_:
+    ```
+    a = "Hello, World!"
+    print(a.upper())  # Retorna: HELLO, WORLD!
+    ```
+
+### Minúsculas - Lower Case
+
+- O _método_ ``lower()`` retorna a **string** em _letras minúsculas_:
+    ```
+    a = "Hello, World!"
+    print(a.lower())  # Retorna: hello, world!
+    ```
+
+### Remover espaço em branco - Remove Whitespace
+
+É possível _remover_ **espaços em branco antes/depois** de uma **string**.
+
+- O _método_ ``strip()`` _remove qualquer espaço em branco_ do **início/fim** de uma **string**:
+    ```
+    a = " Hello, World! "
+    print(a.strip())  # Retorna: Hello, World!
+    ```
+
+### Replace String
+
+- O _método_ ``replace()`` _substitui_ uma **string/caractere** _por outra_ **string/caractere**:
+    ```
+    a = "Hello, World!"
+    print(a.replace("H", "J"))  # Retorna: Jello, World!
+    ```
+
+### Split String
+
+O _método_ ``split()`` retorna uma _lista_ onde o texto entre o **separador especificado** se torna os _itens da lista_.
+
+- O _método_ ``split()`` **divide a string** em _substrings_ se encontrar instâncias do **separador**:
+    ```
+    a = "Hello, World!"
+    print(a.split(","))  # Retorna: ['Hello', 'World!']
+    ```
+
+---
+
+## 
