@@ -11,6 +11,11 @@
 - [Verificar String](#verificar-string)
 - [Verifique se NÃO](#verifique-se-não)
 ---
+- [Slicing](#slicing)
+- [Slice desde o início](#slice-desde-o-início)
+- [Slice até o Fim](#slice-até-o-fim)
+- [Indexação Negativa](#indexação-negativa)
+---
 - []()
 
 ---
@@ -156,6 +161,68 @@ No entanto, Python _não possui um tipo de dados_ de **caractere** (``char``), u
         print("No, 'expensive' is NOT present.")
 
     # Retorna: No, 'expensive' is NOT present.
+    ```
+
+---
+
+## Slicing
+
+É possível "retornar" um _intervalo de caracteres_ usando a sintaxe **slice**.
+
+- Especifique o _índice inicial_ e o _índice final_, separados por **dois pontos**, para _retornar_ uma **parte da string**.
+    ```
+    # Obtendo as 'letras' da posição 2 para a posição 5 (não incluído).
+
+    b = "Hello, World!"
+    print(b[2:5])
+
+    # Retorna: llo
+    ```
+
+    - O _índice final_ não é incluído no "intervalo de caracteres".
+
+    > **Nota**: O _primeiro caractere_ de uma **string** possui índice 0.
+
+## Slice desde o início
+
+Ao **omitir** o _índice inicial_, o **intervalo** começará no _primeiro caractere_:
+
+```
+# Obtendo as 'letras' da primeira posição até a posição 5 (não incluído).
+
+b = "Hello, World!"
+print(b[:5])
+
+# Retorna: Hello
+```
+
+- O _índice final_ **``5``** não é incluído no "intervalo de caracteres".
+
+## Slice até o Fim
+
+Ao **omitir** o _índice final_, o **intervalo** irá até o _final_ (último caractere).
+
+```
+Obtendo as 'letras' da 2 posição até a última posição (incluído).
+
+b = "Hello, World!"
+print(b[2:])
+
+# Retorna: llo, World!
+```
+
+## Indexação Negativa
+
+- Utilizando _índices negativos_ para iniciar o **slice** do _final da string_:
+    ```
+    # Obtendo as letras:
+    # De: "o" em 'World!' (posição -5)
+    # Para, mas (não incluído): "d" em 'World!' (posição -2):
+
+    b = "Hello, World!"
+    print(b[-5:-2])
+
+    # Retorna: orl
     ```
 
 ---
