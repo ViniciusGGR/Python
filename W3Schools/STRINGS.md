@@ -25,6 +25,8 @@
 ---
 - [Concatenação de Strings](#concatenação-de-strings)
 ---
+- [String Format](#string-format)
+---
 - []()
 
 ---
@@ -313,6 +315,56 @@ Para _concatenar/combinar_ duas **strings** é possível usar o _operador_ ``+``
 
     # Segunda maneira:
     print("{} {}".format(a, b))  # Retorna: Hello World!
+    ```
+
+---
+
+## String Format
+
+> Não é possível combinar **strings** e **números** da seguinte forma:
+
+```
+age = 36
+txt = "My name is John, I am " + age
+
+print(txt)  # Gera um erro
+
+"""Retorna:
+Traceback (most recent call last):
+  File "demo_string_format_error.py", line 2, in <module>
+    txt = "My name is John, I am " + age
+TypeError: must be str, not int
+"""
+```
+
+- É possível _combinar_ **strings** e **números** usando o _método_ ``format()``.
+- O _método_ ``format()`` pega os _argumentos_ passados, **formata** e os coloca na **string** onde ``{}`` estão os _espaços reservados_:
+    ```
+    # Utilizando o método 'format()' para inserir números em string:
+    age = 36
+    txt = "My name is John, and I am {}"
+
+    print(txt.format(age))  # Retorna: My name is John, and I am 36
+    ```
+
+- O _método_ ``format()`` aceita um _número ilimitado_ de **argumentos** e são colocados nos respectivos _espaços reservados_:
+    ```
+    quantity = 3
+    itemno = 567
+    price = 49.95
+
+    myorder = "I want {} pieces of item {} for {} dollars."
+    print(myorder.format(quantity, itemno, price))  # Retorna: I want 3 pieces of item 567 for 49.95 dollars.
+    ```
+
+- É possível usar **números de índice** ``{0}, {1}, {2}...`` para garantir que os _argumentos_ sejam colocados nos _espaços reservados_ corretos:
+    ```
+    quantity = 3
+    itemno = 567
+    price = 49.95
+
+    myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
+    print(myorder.format(quantity, itemno, price))  # Retorna: I want to pay 49.95 dollars for 3 pieces of item 567.
     ```
 
 ---
