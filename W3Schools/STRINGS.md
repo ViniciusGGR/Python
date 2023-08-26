@@ -29,7 +29,7 @@
 ---
 - [Escape Character](#escape-character)
 ---
-- []()
+- [Métodos String](#métodos-string)
 
 ---
 
@@ -413,4 +413,12 @@ Um **caractere de escape** é uma _barra invertida_ ``\`` seguida pelo caractere
 
 ---
 
-## 
+## Métodos String
+
+Python possui um _conjunto de **métodos** integrados_ que podem ser usados em **strings**.
+
+> **Nota**: Todos os _métodos_ de **string** retornam _novos valores_. Eles **não alteram a string original**.
+
+- [Métodos e suas Descrições](https://www.w3schools.com/python/python_strings_methods.asp)
+
+---
