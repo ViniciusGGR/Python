@@ -27,6 +27,8 @@
 ---
 - [String Format](#string-format)
 ---
+- [Escape Character](#escape-character)
+---
 - []()
 
 ---
@@ -365,6 +367,48 @@ TypeError: must be str, not int
 
     myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
     print(myorder.format(quantity, itemno, price))  # Retorna: I want to pay 49.95 dollars for 3 pieces of item 567.
+    ```
+
+---
+
+## Escape Character
+
+Um **caractere de escape** é uma _barra invertida_ ``\`` seguida pelo caractere que deseja inserir.
+
+- Para inserir um "caractere ilegal" em uma **string**, basta utilizar um **caractere de escape**.
+    - Um exemplo de "caractere ilegal" são _aspas duplas_ dentro de uma **string** entre _aspas duplas_:
+    
+    ```
+    # Retornará um 'erro' se usar "aspas duplas" dentro de uma 'string' entre "aspas duplas"
+
+    txt = "We are the so-called "Vikings" from the north."
+
+    """Retorna:
+      File "demo_string_escape_error.py", line 1
+        txt = "We are the so-called "Vikings" from the north."
+                                       ^
+    SyntaxError: invalid syntax
+    """
+    ```
+
+- Para corrigir esse problema, basta usar o **caractere de escape** ``\"``:
+    ```
+    txt = "We are the so-called \"Vikings\" from the north."  # Retorna: We are the so-called "Vikings" from the north.
+    ```
+
+    > **Nota**: O **caractere de escape** ``\"`` permite o uso de _aspas duplas_ quando normalmente não seria permitido.
+
+- Outros **caracteres de escape** usados em Python:
+    ```
+    \'      # Single Quote
+    \\      # Backslash
+    \n      # New Line
+    \r      # Carriage Return
+    \t      # Tab
+    \b      # Backspace
+    \f      # Form Feed
+    \ooo    # Octal value
+    \xhh    # Hex value
     ```
 
 ---
