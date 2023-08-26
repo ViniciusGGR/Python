@@ -23,8 +23,9 @@
     - [Replace String](#replace-string)
     - [Split String](#split-string)
 ---
+- [Concatenação de Strings](#concatenação-de-strings)
+---
 - []()
-
 
 ---
 
@@ -281,6 +282,37 @@ O _método_ ``split()`` retorna uma _lista_ onde o texto entre o **separador esp
     ```
     a = "Hello, World!"
     print(a.split(","))  # Retorna: ['Hello', 'World!']
+    ```
+
+---
+
+## Concatenação de Strings
+
+Para _concatenar/combinar_ duas **strings** é possível usar o _operador_ ``+``.
+
+- _Concatenar_ **variável** ``a`` com **variável** ``b`` em **variável** ``c``:
+    ```
+    a = "Hello"
+    b = "World!"
+
+    # Concatenando variáveis
+    c = a + b
+
+    print(c)  # Retorna: HelloWorld!
+    ```
+
+    Adicionando um _espaço em branco_ entre os valores de cada **variável**.
+
+    ```
+    a = "Hello"
+    b = "World!"
+
+    # Primeira maneira:
+    c = a + " " + b
+    print(c)  # Retorna: Hello World!
+
+    # Segunda maneira:
+    print("{} {}".format(a, b))  # Retorna: Hello World!
     ```
 
 ---
