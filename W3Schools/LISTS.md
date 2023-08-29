@@ -19,6 +19,10 @@
     - [Intervalo de Índices Negativos](#intervalo-de-índices-negativos)
 - [Verifique se o item existe](#verifique-se-o-item-existe)
 ---
+- [Alterar valor do item](#alterar-valor-do-item)
+- [Alterar valores em um intervalo de itens](#alterar-valores-em-um-intervalo-de-itens)
+- [Inserir itens](#inserir-itens)
+---
 - []()
 
 ---
@@ -213,6 +217,74 @@ if "apple" in thislist:
 
 # Retorna: Yes, 'apple' is in the fruits list
 ```
+
+---
+
+## Alterar valor do item
+
+Para _alterar o valor_ de um **item específico**, consulte o _número do índice_.
+
+```
+# Alterando de "banana" para "blackcurrant"
+
+thislist = ["apple", "banana", "cherry"]
+thislist[1] = "blackcurrant"
+
+print(thislist)  # Retorna: ['apple', 'blackcurrant', 'cherry']
+```
+
+## Alterar valores em um intervalo de itens
+
+Para _alterar o valor dos itens_ dentro de um **intervalo específico**, defina uma lista com os _novos valores_ e consulte o **intervalo de números de índice** onde deseja _inserir os novos valores_.
+
+```
+# Alterando de "banana" para "blackcurrant" e de "cherry" para "watermelon"
+
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+thislist[1:3] = ["blackcurrant", "watermelon"]
+
+print(thislist)  # Retorna: ['apple', 'blackcurrant', 'watermelon', 'orange', 'kiwi', 'mango']
+```
+
+> **Nota**: O _índice_ ``3`` (**não incluído**), portanto o seu valor se mantém o mesmo.
+
+- Se for _inserido mais itens_ do que **substitui**, os _novos itens_ serão inseridos onde foram **especificados** e os _itens restantes_ serão **movidos de acordo**:
+    ```
+    # Alterando o "segundo valor" (1) substituindo-o por "dois novos valores"
+
+    thislist = ["apple", "banana", "cherry"]
+    thislist[1:2] = ["blackcurrant", "watermelon"]  # "blackcurrant" (índice - 1) e "watermelon" (índice 2)
+
+    print(thislist)  # Retorna: ['apple', 'blackcurrant', 'watermelon', 'cherry']
+    ```
+
+    > **Nota**: O _comprimento da lista_ mudará quando o **número de itens** inseridos não corresponder ao número de itens substituídos.
+
+- Se for _inserido menos itens_ do que **substitui**, os _novos itens_ serão inseridos onde foram **especificados** e os _itens restantes_ serão **movidos de acordo**:
+    ```
+    # Alterando o "segundo" (1) e "terceiro" (2) valores substituindo-os por "um valor"
+
+    thislist = ["apple", "banana", "cherry"]
+    thislist[1:3] = ["watermelon"]  # "watermelon" - (índices 1 e 2)
+
+    print(thislist)  # Retorna: ['apple', 'watermelon']
+    ```
+
+## Inserir itens
+
+Para _inserir um novo item na lista_, **sem substituir nenhum dos valores existentes**, pode-se utilizar o **método** ``insert()``
+
+- O **método** ``insert()`` insere um _item no índice especificado_:
+    ```
+    # Inserindo "watermelon" como terceiro item (2)
+
+    thislist = ["apple", "banana", "cherry"]
+    thislist.insert(2, "watermelon")
+
+    print(thislist)  # Retorna: ['apple', 'banana', 'watermelon', 'cherry']
+    ```
+
+    > **Nota**: Como _resultado_ do exemplo acima, a lista conterá agora **4 itens**.
 
 ---
 
