@@ -23,6 +23,11 @@
 - [Alterar valores em um intervalo de itens](#alterar-valores-em-um-intervalo-de-itens)
 - [Inserir itens](#inserir-itens)
 ---
+- [Anexar Itens](#anexar-itens)
+- [Inserir Itens](#inserir-itens-1)
+- [Estender Lista](#estender-lista)
+- [Adicione qualquer iterável](#adicione-qualquer-iterável)
+---
 - []()
 
 ---
@@ -285,6 +290,67 @@ Para _inserir um novo item na lista_, **sem substituir nenhum dos valores existe
     ```
 
     > **Nota**: Como _resultado_ do exemplo acima, a lista conterá agora **4 itens**.
+
+---
+
+## Anexar Itens
+
+- Para _adicionar um item_ ao **final da lista**, basta utilizar o **método** ``append()``:
+    ```
+    # Usando o método 'append()' para anexar um item
+
+    thislist = ["apple", "banana", "cherry"]
+    thislist.append("orange")
+
+    print(thislist)  # Retorna: ['apple', 'banana', 'cherry', 'orange']
+    ```
+
+## Inserir Itens
+
+Para _inserir um item na lista_ em um **índice especificado**, basta usar o **método** ``insert()``.
+
+- O **método** ``ìnsert()`` insere um _item_ no **índice especificado**:
+    ```
+    # Inserindo um item na segunda posição (1)
+
+    # Inserindo "orange" como segundo item (1)
+    thislist = ["apple", "banana", "cherry"]
+    thislist.insert(1, "orange")
+
+    print(thislist)  # Retorna: ['apple', 'orange', 'banana', 'cherry']
+    ```
+
+    > **Nota**: Como _resultado_ do exemplo acima, a lista conterá agora **4 itens**.
+
+## Estender Lista
+
+Para _acrescentar elementos de outra lista_ à **lista atual**, basta usar o **método** ``extend()``.
+
+```
+# Adicionando os elementos da lista "tropical" a lista "thislist"
+
+thislist = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+
+thislist.extend(tropical)
+print(thislist)  # Retorna: ['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya']
+```
+
+- Os _elementos_ serão adicionados ao **final da lista**.
+
+## Adicione qualquer iterável
+
+O **método** ``extend()`` não precisa _anexar listas_, é possível adicionar qualquer objeto iterável (**tuples**, **sets**, **dictionaries** etc).
+
+```
+# Adicionando elementos de um 'tuple' a uma 'lista'
+
+thislist = ["apple", "banana", "cherry"]
+thistuple = ("kiwi", "orange")
+
+thislist.extend(thistuple)
+print(thislist)  # Retorna: ['apple', 'banana', 'cherry', 'kiwi', 'orange']
+```
 
 ---
 
