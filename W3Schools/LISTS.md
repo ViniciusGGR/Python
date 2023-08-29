@@ -13,6 +13,12 @@
 - [O Construtor list()](#o-construtor-list)
 - [Coleções Python (Arrays)](#coleções-python-arrays)
 ---
+- [Acessar itens](#acessar-itens)
+    - [Indexação Negativa](#indexação-negativa)
+    - [Intervalo de Índices](#intervalo-de-índices)
+    - [Intervalo de Índices Negativos](#intervalo-de-índices-negativos)
+- [Verifique se o item existe](#verifique-se-o-item-existe)
+---
 - []()
 
 ---
@@ -134,3 +140,80 @@ Existem quatro _tipos de dados integrados_ em Python usados para **armazenar col
 
 ---
 
+## Acessar itens
+
+- Os _itens da lista_ são **indexados** e é possível acessá-los consultando o **número do índice**:
+    ```
+    # Imprimindo o segundo item da lista
+    thislist = ["apple", "banana", "cherry"]
+    print(thislist[1])  # Retorna: banana
+    ```
+
+    > **Nota**: O _primeiro item_ possui **índice** ``0``.
+
+### Indexação Negativa
+
+_Indexação negativa_ significa **começar do fim**.
+
+- ``-1`` refere-se ao _último item_, ``-2`` refere-se ao _penúltimo item_ etc:
+    ```
+    # Imprimindo o último item da lista
+    thislist = ["apple", "banana", "cherry"]
+    print(thislist[-1])  # Retorna: cherry
+    ```
+
+### Intervalo de Índices
+
+É possível _especificar um **intervalo de índices**_ especificando **onde começar** e **onde terminar** o _intervalo_.
+
+Ao _especificar um intervalo_, o valor de retorno será uma **nova lista** com os itens especificados.
+
+```
+# Imprimindo terceiro, quarto e quinto item
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(thislist[2:5])  # Retorna: ['cherry', 'orange', 'kiwi']
+```
+
+> **Nota**: A "pesquisa" começará no _índice_ ``2`` (**incluído**) e terminará no _índice_ ``5`` (**não incluído**).
+
+> **Nota**: O _primeiro item_ possui **índice** ``0``.
+
+- Ao _omitir o valor inicial_, o **intervalo começará no primeiro item**:
+    ```
+    # Imprimindo desde o primeiro item, mas NÃO incluindo, "kiwi".
+    thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+    print(thislist[:4])  # Retorna: ['apple', 'banana', 'cherry', 'orange']
+    ```
+
+- Ao _omitir o valor final_, o **intervalo irá para o final da lista**:
+    ```
+    # Imprimindo os itens de "cherry" até o final.
+    thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+    print(thislist[2:])  # Retorna: ['cherry', 'orange', 'kiwi', 'melon', 'mango']
+    ```
+
+### Intervalo de Índices Negativos
+
+- Especifique _índices negativos_ se desejar **iniciar a pesquisa do final da lista**:
+    ```
+    # Imprimindo os itens de "orange" (-4) até, mas NÃO inclui "mango" (-1).
+    thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+    print(thislist[-4:-1])  # Retorna: ['orange', 'kiwi', 'melon']
+    ```
+
+## Verifique se o item existe
+
+Para _determinar_ se um **item especificado** está _presente em uma lista_, basta utilizar a **palavra-chave** ``in``.
+
+```
+# Verificando se "apple" está presente na lista:
+thislist = ["apple", "banana", "cherry"]
+if "apple" in thislist:
+    print("Yes, 'apple' is in the fruits list")
+
+# Retorna: Yes, 'apple' is in the fruits list
+```
+
+---
+
+## 
