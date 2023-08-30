@@ -32,6 +32,11 @@
 - [Remover índice específico](#remover-índice-específico)
 - [Limpe a lista](#limpe-a-lista)
 ---
+- [Loop nos itens da lista](#loop-nos-itens-da-lista)
+- [Loop consultando os números de índice](#loop-consultando-os-números-de-índice)
+- [Usando um Loop While](#usando-um-loop-while)
+- [Loop usando compreensão de lista](#loop-usando-compreensão-de-lista)
+---
 - []()
 
 ---
@@ -438,6 +443,89 @@ thislist = ["apple", "banana", "cherry"]
 thislist.clear()
 
 print(thislist)  # Retorna: []
+```
+
+---
+
+## Loop nos itens da lista
+
+É possível _percorrer os itens_ de uma **lista** usando um _loop_ ``for``.
+
+```
+# Imprimindo 'todos os itens' da lista, um por um
+
+thislist = ["apple", "banana", "cherry"]
+for x in thislist:
+    print(x)
+
+"""Retorna:
+    apple
+    banana
+    cherry
+"""
+```
+
+## Loop consultando os números de índice
+
+Também é possível _percorrer os itens_ de uma **lista** consultando seu **número de índice**.
+
+- Utilize as **funções** ``range()`` e ``len()`` para criar um _iterável_ adequado:
+    ```
+    # Imprimindo 'todos os itens' referindo-se ao seu 'número de índice'
+
+    thislist = ["apple", "banana", "cherry"]
+    for i in range(len(thislist)):
+        print(thislist[i])
+
+    """Retorna:
+        apple
+        banana
+        cherry
+    """
+    ```
+
+    O _iterável_ criado no exemplo acima é: ``[0, 1, 2]``.
+
+## Usando um Loop While
+
+É possível _percorrer os itens_ de uma **lista** usando um _loop_ ``while``.
+
+Utilize a **função** ``len()`` para determinar o _comprimento da lista_, então comece em **0** e _percorra os itens da lista_ consultando seus **índices**.
+
+> Lembre-se de _aumentar o índice_ em **1** após cada _iteração_.
+
+```
+# Imprimindo 'todos os itens', usando um loop while para 'percorrer todos os números de índice'
+
+thislist = ["apple", "banana", "cherry"]
+
+i = 0
+while i < len(thislist):
+    print(thislist[i])
+    i = i + 1
+
+"""Retorna:
+    apple
+    banana
+    cherry
+"""
+```
+
+## Loop usando compreensão de lista
+
+A _compreensão de lista_ oferece uma **sintaxe** mais curta para _percorrer listas_.
+
+```
+# Um pequeno loop for manul que imprimirá todos os itens de uma lista
+
+thislist = ["apple", "banana", "cherry"]
+[print(x) for x in thislist]
+
+"""Retorna:
+    apple
+    banana
+    cherry
+"""
 ```
 
 ---
