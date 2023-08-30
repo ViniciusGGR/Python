@@ -37,7 +37,11 @@
 - [Usando um Loop While](#usando-um-loop-while)
 - [Loop usando compreensão de lista](#loop-usando-compreensão-de-lista)
 ---
-- []()
+- [Compreensão de lista](#compreensão-de-lista)
+- [A Sintaxe](#a-sintaxe)
+    - [Condição](#condição)
+    - [Iterável](#iterável)
+    - [Expressão](#expressão)
 
 ---
 
@@ -527,6 +531,127 @@ thislist = ["apple", "banana", "cherry"]
     cherry
 """
 ```
+
+---
+
+## Compreensão de lista
+
+A _compreensão de lista_ oferece uma **sintaxe** mais curta quando se deseja criar uma _nova lista com base nos valores_ de uma **lista existente**.
+
+Exemplo:
+
+- Com base em uma _lista de frutas_, deseja-se uma **nova lista**, contendo _apenas as frutas_ com a **letra** ``a`` no nome.
+- Sem _compreensão de lista_ será necessário escrever uma **declaração** ``for`` com um _teste condicional_ dentro:
+    ```
+    fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+    newlist = []
+
+    for x in fruits:
+        if "a" in x:
+            newlist.append(x)
+    
+    print(newlist)  # Retorna: ['apple', 'banana', 'mango']
+    ```
+
+    Com a _compreensão de lista_ é possível fazer tudo isso com **apenas uma linha de código**:
+
+    ```
+    fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+
+    newlist = [x for x in fruits if "a" in x]
+
+    print(newlist)  # Retorna: ['apple', 'banana', 'mango']
+    ```
+
+## A Sintaxe
+
+> newlist = [_expression_ for _item_ in _iterable_ if _condition_ == True]
+
+- O _valor de retorno_ é uma **nova lista**, deixando a _lista antiga_ **inalterada**.
+
+### Condição
+
+A _condição_ é como um "filtro" que aceita _apenas os itens_ com valor igual a ``True``.
+
+```
+# Aceita apenas itens que não sejam (diferente de) "apple"
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+
+newlist = [x for x in fruits if x != "apple"]
+
+print(newlist)  # Retorna: ['banana', 'cherry', 'kiwi', 'mango']
+```
+
+- A _condição_ ``if x != "apple"`` retornará ``True`` para _todos os elementos_ "exceto" **apple**, fazendo com que a _nova lista_ contenha todas as frutas, "exceto" **apple**.
+
+A _condição_ é **opcional** e pode ser _omitida_.
+
+```
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+
+newlist = [x for x in fruits]
+
+print(newlist)  # Retorna: ['apple', 'banana', 'cherry', 'kiwi', 'mango']
+```
+
+### Iterável
+
+O _iterável_ pode ser **qualquer objeto iterável**, como um **list**, **tuple**, **set** etc.
+
+```
+# É possível usar a função 'range()' para criar um iterável
+
+newlist = [x for x in range(10)]
+
+print(newlist)  # Retorna: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+- Mesmo exemplo, mas com uma _condição_:
+    ```
+    # Aceita apenas números menores que 5
+
+    newlist = [x for x in range(10) if x < 5]
+
+    print(newlist)  # Retorna: [0, 1, 2, 3, 4]
+    ```
+
+### Expressão
+
+A _expressão_ é o **item atual** na _iteração_, mas também é o _resultado_, que pode ser "manipulado" antes que acabe como um _item de lista_ na **nova lista**.
+
+```
+# Defina os valores na nova lista para 'letras maiúsculas'
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x.upper() for x in fruits]
+
+print(newlist)  # Retorna: ['APPLE', 'BANANA', 'CHERRY', 'KIWI', 'MANGO']
+```
+
+- É possível _definir o resultado_ como quiser:
+    ```
+    # Definindo todos os valores na nova lista como 'hello'
+
+    fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+    newlist = ['hello' for x in fruits]
+
+    print(newlist)  # Retorna: ['hello', 'hello', 'hello', 'hello', 'hello']
+    ```
+
+A _expressão_ também pode conter **condições**, não como "filtro", mas como uma forma de _manipular o resultado_:
+
+```
+# Retornando "orange" em vez de "banana"
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x if x != "banana" else "orange" for x in fruits]
+
+print(newlist)  # Retorna: ['apple', 'orange', 'cherry', 'kiwi', 'mango']
+```
+
+- A _expressão_ no exemplo acima diz:
+    - Devolva o item _se não for ``banana``_, _se for ``banana`` devolva ``orange``_.
 
 ---
 
