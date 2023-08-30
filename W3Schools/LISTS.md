@@ -28,6 +28,10 @@
 - [Estender Lista](#estender-lista)
 - [Adicione qualquer iterável](#adicione-qualquer-iterável)
 ---
+- [Remover item específico](#remover-item-específico)
+- [Remover índice específico](#remover-índice-específico)
+- [Limpe a lista](#limpe-a-lista)
+---
 - []()
 
 ---
@@ -350,6 +354,90 @@ thistuple = ("kiwi", "orange")
 
 thislist.extend(thistuple)
 print(thislist)  # Retorna: ['apple', 'banana', 'cherry', 'kiwi', 'orange']
+```
+
+---
+
+## Remover item específico
+
+O **método** ``remove()`` remove o _item especificado_.
+
+```
+# Removendo 'banana'
+
+thislist = ["apple", "banana", "cherry"]
+thislist.remove("banana")
+
+print(thislist)  # Retorna: ['apple', 'cherry']
+```
+
+- Se houver _mais de um item com o valor especificado_, o **método** ``remove()`` remove a _primeira ocorrência_:
+    ```
+    # Removendo a primeira ocorrência de 'banana'
+
+    thislist = ["apple", "banana", "cherry", "banana", "kiwi"]
+    thislist.remove("banana")
+
+    print(thislist)  # Retorna: ['apple', 'cherry', 'banana', 'kiwi']
+    ```
+
+## Remover índice específico
+
+O **método** ``pop()`` remove o _índice especificado_.
+
+```
+# Removendo o segundo item (1)
+
+thislist = ["apple", "banana", "cherry"]
+thislist.pop(1)
+
+print(thislist)  # Retorna: ['apple', 'cherry']
+```
+
+- Se **não** for _especificado o índice_, o **método** ``pop()`` _removerá o último item_:
+    ```
+    # Removendo o último item
+
+    thislist = ["apple", "banana", "cherry"]
+    thislist.pop()
+
+    print(thislist)  # Retorna: ['apple', 'banana']
+    ```
+
+A _palavra-chave_ ``del`` também **remove o índice especificado**.
+
+```
+# Removendo o primeiro item (0)
+
+thislist = ["apple", "banana", "cherry"]
+del thislist[0]
+
+print(thislist)  # Retorna: ['banana', 'cherry']
+```
+
+- A _palavra-chave_ ``del`` também pode **excluir completamente a lista**:
+    ```
+    # Excluindo a lista inteira
+
+    thislist = ["apple", "banana", "cherry"]
+    del thislist
+
+    print(thislist)  # Retorna: NameError: name 'thislist' is not defined
+    ```
+
+## Limpe a lista
+
+O **método** ``clear()`` _esvazia a lista_.
+
+A _lista_ ainda permanece, mas **não tem conteúdo**.
+
+```
+# Limpando o conteúdo da lista
+
+thislist = ["apple", "banana", "cherry"]
+thislist.clear()
+
+print(thislist)  # Retorna: []
 ```
 
 ---
