@@ -49,6 +49,8 @@
 - [Ordenar sem distinção entre maiúsculas e minúsculas](#ordenar-sem-distinção-entre-maiúsculas-e-minúsculas)
 - [Ordem reversa](#ordem-reversa)
 ---
+- [Copiar uma lista](#copiar-uma-lista)
+---
 - []()
 
 ---
@@ -760,6 +762,33 @@ print(thislist)  # Retorna: ['Kiwi', 'Orange', 'banana', 'cherry']
     thislist.reverse()
 
     print(thislist)  # Retorna: ["cherry", "Kiwi", "Orange", "banana"]
+    ```
+
+---
+
+## Copiar uma lista
+
+Não é possível _copiar uma lista_ simplesmente digitando: ``list2 = list1``, porque ``list2`` será apenas uma **referência** a ``list1``, e as _alterações_ feitas em ``list1`` também serão _feitas automaticamente_ em ``list2``.
+
+- Existem maneiras de fazer uma _cópia_, uma maneira é usar o **método integrado** ``copy()`` para _listas_:
+    ```
+    # Fazendo uma cópia de uma lista com o método 'copy()'
+
+    thislist = ["apple", "banana", "cherry"]
+    mylist = thislist.copy()
+
+    print(mylist)  # Retorna: ['apple', 'banana', 'cherry']
+    ```
+
+    Outra maneira de fazer uma _cópia_ é usar o **método integrado** ``list()``.
+
+    ```
+    # Fazendo uma cópia de uma lista com o método 'list()'
+
+    thislist = ["apple", "banana", "cherry"]
+    mylist = list(thislist)
+
+    print(mylist)  # Retorna: ['apple', 'banana', 'cherry']
     ```
 
 ---
