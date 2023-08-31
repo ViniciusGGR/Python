@@ -14,6 +14,12 @@
 - [O construtor tuple()](#o-construtor-tuple)
 - [Coleções Python (Arrays)](#coleções-python-arrays)
 ---
+- [Acessar itens de Tuple](#acessar-itens-de-tuple)
+- [Indexação Negativa](#indexação-negativa)
+- [Intervalo de Índices](#intervalo-de-índices)
+- [Intervalo de Índices Negativos](#intervalo-de-índices-negativos)
+- [Verifique se o item existe](#verifique-se-o-item-existe)
+---
 - []()
 
 ---
@@ -141,6 +147,93 @@ Existem quatro _tipos de dados integrados_ em Python usados para **armazenar col
 - ``Dictionary``: É uma _coleção ordenada_ e **mutável**. Nenhum _membro duplicado_.
 
 > Ao escolher um _tipo de dado integrado_ para **armazenar coleções de dados** é útil compreender as _propriedades_ desse tipo. Escolher o tipo certo para uma determinado conjunto de dados pode significar retenção de significado e um aumento na eficiência ou segurança.
+
+---
+
+## Acessar itens de Tuple
+
+É possível _acessar itens_ da **Tuple** consultando o _número do índice_, entre **colchetes** (``[]``).
+
+```
+# Imprimindo o segundo item (1) da Tuple.
+
+thistuple = ("apple", "banana", "cherry")
+print(thistuple[1])  # Retorna: banana
+```
+
+> **Nota**: O _primeiro item_ possui **índice** ``0``.
+
+## Indexação Negativa
+
+_Indexação negativa_ significa **começar do fim**.
+
+- ``-1`` refere-se ao _último item_, ``-2`` refere-se ao _penúltimo item_ etc:
+    ```
+    # Imprimindo o último item da Tuple
+
+    thistuple = ("apple", "banana", "cherry")
+    print(thistuple[-1])  # Retorna: cherry
+    ```
+
+## Intervalo de Índices
+
+É possível _especificar um intervalo de índices_ especificando onde **começar** e onde **terminar** o _intervalo_.
+
+Ao _especificar um intervalo_, o **valor de retorno** será uma _nova Tuple_ com os _itens especificados_.
+
+```
+# Imprimindo o terceiro, quarto e quinto item (2, 3, 4)
+
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[2:5])  # Retorna: ('cherry', 'orange', 'kiwi')
+```
+
+> **Nota**: A _pesquisa_ começará no _índice_ ``2`` (**incluído**) e terminará no _índice_ ``5`` (**não incluído**).
+
+> **Nota**: O _primeiro item_ possui **índice** ``0``.
+
+- Ao **omitir** o _valor inicial_, o intervalo começará no _primeiro item_:
+    ```
+    thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+    print(thistuple[:4])  # Retorna: ('apple', 'banana', 'cherry', 'orange')
+    ```
+
+    > **Nota**: A _pesquisa_ começará no _índice_ ``0`` (**incluído**) e terminará no _índice_ ``4`` (**não incluído**).
+
+- Ao **omitir** o _valor final_, o intervalo irá para o _final da Tuple_:
+    ```
+    # Imprimindo os itens de "cherry" (2) até o final.
+
+    thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+    print(thistuple[2:])  # Retorna: ('cherry', 'orange', 'kiwi', 'melon', 'mango')
+    ```
+
+    > **Nota**: A _pesquisa_ começará no _índice_ ``2`` (**incluído**) e terminará no _último índice_ (**incluído**).
+
+## Intervalo de Índices Negativos
+
+Especifique _índices negativos_ se quiser **iniciar** a pesquisa do _final da Tuple_.
+
+```
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[-4:-1])  # Retorna: ('orange', 'kiwi', 'melon')
+```
+
+> **Nota**: A _pesquisa_ começará no _índice_ ``-4`` (**incluído**) e terminará no _índice_ ``-1`` (**não incluído**).
+
+## Verifique se o item existe
+
+Para determinar se um _item especificado_ está **presente** em uma _Tuple_, basta utilizar a _palavra-chave_ ``ìn``.
+
+```
+# Verificando se "apple" está presente na Tuple
+
+thistuple = ("apple", "banana", "cherry")
+if "apple" in thistuple:
+    print("Yes, 'apple' is in the fruits tuple")
+
+# Retorna: Yes, 'apple' is in the fruits tuple
+```
 
 ---
 
