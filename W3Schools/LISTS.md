@@ -42,6 +42,14 @@
     - [Condição](#condição)
     - [Iterável](#iterável)
     - [Expressão](#expressão)
+---
+- [Ordenar lista alfanumericamente](#ordenar-lista-alfanumericamente)
+- [Ordenar em ordem decrescente](#ordenar-em-ordem-decrescente)
+- [Personalizar função de classificação](#personalizar-função-de-classificação)
+- [Ordenar sem distinção entre maiúsculas e minúsculas](#ordenar-sem-distinção-entre-maiúsculas-e-minúsculas)
+- [Ordem reversa](#ordem-reversa)
+---
+- []()
 
 ---
 
@@ -652,6 +660,107 @@ print(newlist)  # Retorna: ['apple', 'orange', 'cherry', 'kiwi', 'mango']
 
 - A _expressão_ no exemplo acima diz:
     - Devolva o item _se não for ``banana``_, _se for ``banana`` devolva ``orange``_.
+
+---
+
+## Ordenar lista alfanumericamente
+
+Os _objetos de uma lista_ possuem um **método** ``sort()`` que _ordenará a lista_ **alfanumericamente**, em _ordem crescente_, por padrão.
+
+```
+# Classificando a lista em 'ordem alfabética'
+
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort()
+
+print(thislist)  # Retorna: ['banana', 'kiwi', 'mango', 'orange', 'pineapple']
+```
+
+```
+# Classificando a lista 'numericamente'
+
+thislist = [100, 50, 65, 82, 23]
+thislist.sort()
+
+print(thislist)  # Retorna: [23, 50, 65, 82, 100]
+```
+
+## Ordenar em ordem decrescente
+
+Para _classificar_ em **ordem decrescente**, utilize o **método** ``sort()`` com a _palavra-chave_ (**argument**) ``reverse = True``.
+
+```
+# Classificando a lista em 'ordem decrescente'
+
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort(reverse = True)
+
+print(thislist)  # Retorna: ['pineapple', 'orange', 'mango', 'kiwi', 'banana']
+```
+
+```
+# Classificando a lista em 'ordem decrescente'
+
+thislist = [100, 50, 65, 82, 23]
+thislist.sort(reverse = True)
+
+print(thislist)  # Retorna: [100, 82, 65, 50, 23]
+```
+
+## Personalizar função de classificação
+
+É possível "personalizar" uma _própria_ **função** usando a _palavra-chave_ (**argument**) ``key = function``.
+
+- A **função** retornará um _número_ que será usado para **ordenar a lista** (primeiro o _número mais baixo_):
+    ```
+    # Classificando a lista com base em quão próximo o número está de 50
+
+    def myfunc(n):
+        return abs(n - 50)
+
+    thislist = [100, 50, 65, 82, 23]
+    thislist.sort(key = myfunc)
+
+    print(thislist)  # Retorna: [50, 65, 23, 82, 100]
+    ```
+
+## Ordenar sem distinção entre maiúsculas e minúsculas
+
+Por padrão, o **método** ``sort()`` diferencia _maiúsculas_ de _minúsculas_, resultando em **todas as letras maiúsculas sendo classificadas antes das minúsculas**.
+
+```
+# A classificação com distinção entre maiúsculas e minúsculas pode fornecer um resultado inesperado
+
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort()
+
+print(thislist)  # Retorna: ['Kiwi', 'Orange', 'banana', 'cherry']
+```
+
+- É possível usar _funções integradas_ como **funções principais** ao _classificar uma lista_.
+- Portanto, se deseja uma **função de classificação** que _não diferencia maiúsculas de minúsculas_, basta utilizar ``str.lower`` como **função principal**:
+    ```
+    # Classificação de lista sem distinção entre maiúsculas e minúsculas
+
+    thislist = ["banana", "Orange", "Kiwi", "cherry"]
+    thislist.sort(key = str.lower)
+
+    print(thislist)  # Retorna: ['banana', 'cherry', 'Kiwi', 'Orange']
+    ```
+
+## Ordem reversa
+
+É possível _inverter_ a **ordem de uma lista**, independentemente do alfabeto.
+
+- O **método** ``reverse()`` _inverte a ordem de classificação atual dos elementos_:
+    ```
+    # Invertendo a ordem dos itens da lista
+
+    thislist = ["banana", "Orange", "Kiwi", "cherry"]
+    thislist.reverse()
+
+    print(thislist)  # Retorna: ["cherry", "Kiwi", "Orange", "banana"]
+    ```
 
 ---
 
