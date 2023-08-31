@@ -51,6 +51,8 @@
 ---
 - [Copiar uma lista](#copiar-uma-lista)
 ---
+- [Juntando duas listas](#juntando-duas-listas)
+---
 - []()
 
 ---
@@ -789,6 +791,47 @@ Não é possível _copiar uma lista_ simplesmente digitando: ``list2 = list1``, 
     mylist = list(thislist)
 
     print(mylist)  # Retorna: ['apple', 'banana', 'cherry']
+    ```
+
+---
+
+## Juntando duas listas
+
+Existem _várias maneiras_ de **unir** ou **concatenar** duas ou mais listas em Python.
+
+- Uma das maneiras mais fáceis é usar o **operador** ``+``:
+    ```
+    # Juntando duas listas
+
+    list1 = ["a", "b", "c"]
+    list2 = [1, 2, 3]
+
+    list3 = list1 + list2
+    print(list3)  # Retorna: ['a', 'b', 'c', 1, 2, 3]
+    ```
+
+- _Unindo_ duas listas **anexando todos os itens** da ``lista2`` à ``lista1``, um por um:
+    ```
+    # Anexando 'list2' em 'list1'
+    
+    list1 = ["a", "b", "c"]
+    list2 = [1, 2, 3]
+
+    for x in list2:
+        list1.append(x)
+
+    print(list1)  # Retorna: ['a', 'b', 'c', 1, 2, 3]
+    ```
+
+- Usando o **método** ``extend()``, onde o objetivo é _adicionar elementos_ de uma lista a outra lista:
+    ```
+    # Usando o método 'extend()' para adicionar 'list2' no final de 'list1'
+    
+    list1 = ["a", "b", "c"]
+    list2 = [1, 2, 3]
+
+    list1.extend(list2)
+    print(list1)  # Retorna: ['a', 'b', 'c', 1, 2, 3]
     ```
 
 ---
