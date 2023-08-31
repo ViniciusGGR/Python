@@ -53,7 +53,7 @@
 ---
 - [Juntando duas listas](#juntando-duas-listas)
 ---
-- []()
+- [Lista de Métodos](#lista-de-métodos)
 
 ---
 
@@ -836,4 +836,20 @@ Existem _várias maneiras_ de **unir** ou **concatenar** duas ou mais listas em 
 
 ---
 
-## 
+## Lista de Métodos
+
+Python possui um _conjunto_ de **métodos integrados** que podem ser usados em listas.
+
+- ``append()``: Adiciona um elemento no final da lista.
+- ``clear()``: Remove todos os elementos da lista.
+- ``copy()``: Retorna uma cópia da lista.
+- ``count()``: Retorna o número de elementos com o valor especificado.
+- ``extend()``: Adiciona os elementos de uma lista (ou qualquer _iterável_) ao final da lista atual.
+- ``index()``: Retorna o índice do primeiro elemento com o valor especificado.
+- ``insert()``: Adiciona um elemento na posição especificada.
+- ``pop()``: Remove o elemento na posição especificada.
+- ``remove()``: Remove o item com o valor especificado.
+- ``reverse()``: Inverte a ordem da lista.
+- ``sort()``: Classifica a lista.
+
+---
