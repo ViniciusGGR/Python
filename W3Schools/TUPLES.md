@@ -20,6 +20,10 @@
 - [Intervalo de Índices Negativos](#intervalo-de-índices-negativos)
 - [Verifique se o item existe](#verifique-se-o-item-existe)
 ---
+- [Alterar valores de Tuple](#alterar-valores-de-tuple)
+- [Adicionar itens](#adicionar-itens)
+- [Remover itens](#remover-itens)
+---
 - []()
 
 ---
@@ -237,4 +241,85 @@ if "apple" in thistuple:
 
 ---
 
-## 
+As _Tuples_ são **imutáveis**, o que significa que _não podem ser alteradas_, **adicionar** ou **remover** _itens_ depois que a _Tuple_ for criada não é mais possível.
+
+> Mas existem algumas _soluções alternativas_.
+
+## Alterar valores de Tuple
+
+Depois que uma _Tuple_ é criada, **não pode alterar seus valores**. As _Tuples_ são **imutáveis**.
+
+- É possível _converter uma Tuple_ em uma **lista**, _alterar a lista_ e **converter a lista** novamente em uma _Tuple_:
+    ```
+    # Convertendo uma Tuple em uma Lista para alterá-la
+
+    thistuple = ("apple", "banana", "cherry")
+    thislist = list(thistuple)  # Convertendo de 'Tuple' para 'List'
+
+    thislist[1] = "kiwi"
+    thistuple = tuple(thislist)  # Convertendo de 'List' para 'Tuple'
+
+    print(thistuple)  # Retorna: ('apple', 'kiwi', 'cherry')
+    ```
+
+## Adicionar itens
+
+Como as _Tuples_ são **imutáveis**, elas _não possuem_ um "método integrado" ``append()``, mas existem outras maneiras de _adicionar itens_ a uma _Tuple_.
+
+- **Converter em uma _List_** - É possível _converter_ uma _Tuple_ em uma **List**, _adicionar seu(s) item(s)_ e **convertê-la** novamente em uma _Tuple_:
+    ```
+    # Convertendo uma 'Tuple' em uma 'List', adicionando "orange" e convertendo novamente em uma 'Tuple'
+
+    thistuple = ("apple", "banana", "cherry")
+    thislist = list(thistuple)  # Convertendo de 'Tuple' para 'List'
+
+    thislist.append("orange")
+    thistuple = tuple(thislist)  # Convertendo de 'List' para 'Tuple'
+
+    print(thistuple)  # Retorna: ('apple', 'banana', 'cherry', 'orange')
+    ```
+
+- **Adicione _Tuple_ a uma _Tuple_** - É possível **adicionar** _Tuples_ a _Tuples_, então se quiser **adicionar** um _item (ou vários)_, crie uma **nova Tuple** com os _itens_ e **adicione** a _Tuple_ existente:
+    ```
+    # Criando uma nova 'Tuple' com o valor "orange" e adicionando essa 'Tuple'
+
+    thistuple = ("apple", "banana", "cherry")
+    newtuple = ("orange",)
+
+    thistuple += newtuple
+
+    print(thistuple)  # Retorna: ('apple', 'banana', 'cherry', 'orange')
+    ```
+
+    > **Nota**: Ao criar uma _Tuple_ com **apenas um item**, lembre-se de _incluir uma vírgula (``,``) após o item_, caso contrário não será identificado como _Tuple_.
+
+## Remover itens
+
+> **Nota**: Não é possível _remover itens_ de uma **Tuple**.
+
+- As _Tuples_ são **imutáveis**, portanto não é possível _remover itens_ delas, mas pode usar a mesma solução de _alterar_ e _adicionar_ **itens da Tuple**:
+    ```
+    # Convertendo a 'Tuple' em uma 'List', removendo "apple" e convertendo novamente em uma 'Tuple'
+
+    thistuple = ("apple", "banana", "cherry")
+    thislist = list(thistuple)  # Convertendo de 'Tuple' para 'List'
+
+    thislist.remove("apple")
+    thistuple = tuple(thislist)  # Convertendo de 'List' para 'Tuple'
+
+    print(thistuple)  # Retorna: ('banana', 'cherry')
+    ```
+
+- Também é possível **excluir** uma _Tuple_ completamente:
+    ```
+    # A palavra-chave 'del' pode excluir a 'Tuple' completamente
+
+    thistuple = ("apple", "banana", "cherry")
+    del thistuple
+
+    print(thistuple)  # Gerará um erro porque a 'Tuple' não existe mais
+    ```
+
+---
+
+##
