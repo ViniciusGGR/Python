@@ -31,6 +31,9 @@
 - [Loops consultando os números de índice](#loops-consultando-os-números-de-índice)
 - [Usando um loop while](#usando-um-loop-while)
 ---
+- [Juntando duas Tuples](#juntando-duas-tuples)
+- [Multiplicar Tuples](#multiplicar-tuples)
+---
 - []()
 
 ---
@@ -444,6 +447,35 @@ for x in thistuple:
     ```
 
     > **Nota**: Lembre-se de _aumentar o índice_ em ``1`` após **cada iteração**.
+
+---
+
+## Juntando duas Tuples
+
+Para _juntar_ duas ou mais **Tuples** é possível usar o _operador_ ``+``.
+
+```
+# Juntando duas Tuples
+
+tuple1 = ("a", "b", "c")
+tuple2 = (1, 2, 3)
+
+tuple3 = tuple1 + tuple2
+print(tuple3)  # Retorna: ('a', 'b', 'c', 1, 2, 3)
+```
+
+## Multiplicar Tuples
+
+É possível _multiplicar o conteúdo_ de uma **Tuple** um _determinado número de vezes_, basta utilizar o _operador_ ``*``.
+
+```
+# Multiplicando a Tuple "fruits" por 2
+
+fruits = ("apple", "banana", "cherry")
+mytuple = fruits * 2
+
+print(mytuple)  # Retorna: ('apple', 'banana', 'cherry', 'apple', 'banana', 'cherry')
+```
 
 ---
 
