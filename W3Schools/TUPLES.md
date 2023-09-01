@@ -24,6 +24,9 @@
 - [Adicionar itens](#adicionar-itens)
 - [Remover itens](#remover-itens)
 ---
+- [Descompactando uma Tuple](#descompactando-uma-tuple)
+- [Usando Asterisk *](#usando-asterisk)
+---
 - []()
 
 ---
@@ -322,4 +325,58 @@ Como as _Tuples_ são **imutáveis**, elas _não possuem_ um "método integrado"
 
 ---
 
-##
+## Descompactando uma Tuple
+
+Quando uma _Tuple_ é criada, normalmente é **atribuído valores** a ela. Isso é chamado "packing" (_empacotar_) uma _Tuple_.
+
+```
+# Empacotando uma 'Tuple'
+fruits = ("apple", "banana", "cherry")
+```
+
+- Em Python, também é possível _extrair os valores_ de volta para **variáveis**. Isso é chamado "unpacking" (_descompactar_):
+    ```
+    # Descompactando uma 'Tuple'
+    fruits = ("apple", "banana", "cherry")
+
+    (green, yellow, red) = fruits
+
+    print(green)   # Retorna: apple
+    print(yellow)  # Retorna: banana
+    print(red)     # Retorna: cherry
+    ```
+
+    > **Nota**: O _número de variáveis_ deve **corresponder** ao _número de valores na Tuple_, caso contrário, deve-se usar um **asterisco** para _coletar os valores restantes_ como uma **lista**.
+
+## Usando Asterisk ``*``
+
+Se o _número de variáveis_ for **menor** que o _número de valores_, é possível **adicionar** um ``*`` ao _nome da variável_ e os **valores serão atribuídos a variável** como uma _lista_.
+
+```
+# Atribuindo o restante dos valores em uma lista chamada 'red'
+
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+
+(green, yellow, *red) = fruits
+
+print(green)   # Retorna: apple
+print(yellow)  # Retorna: banana
+print(red)     # Retorna: ['cherry', 'strawberry', 'raspberry']
+```
+
+- Se o **asterisco** for _adicionado_ a **outro nome de variável** que _não o último_, o Python atribuirá valores à variável até que o _número de valores restantes_ corresponda ao _número de variáveis restantes_:
+    ```
+    # Adicionando uma 'lista' de valores à variável "tropic"
+
+    fruits = ("apple", "mango", "papaya", "pineapple", "cherry")
+
+    (green, *tropic, red) = fruits
+
+    print(green)   # Retorna: apple
+    print(tropic)  # Retorna: ['mango', 'papaya', 'pineapple']
+    print(red)     # Retorna: cherry
+    ```
+
+---
+
+## 
