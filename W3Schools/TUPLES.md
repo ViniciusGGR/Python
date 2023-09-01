@@ -27,6 +27,10 @@
 - [Descompactando uma Tuple](#descompactando-uma-tuple)
 - [Usando Asterisk *](#usando-asterisk)
 ---
+- [Loops nos itens da Tuple](#loops-nos-itens-da-tuple)
+- [Loops consultando os números de índice](#loops-consultando-os-números-de-índice)
+- [Usando um loop while](#usando-um-loop-while)
+---
 - []()
 
 ---
@@ -376,6 +380,70 @@ print(red)     # Retorna: ['cherry', 'strawberry', 'raspberry']
     print(tropic)  # Retorna: ['mango', 'papaya', 'pineapple']
     print(red)     # Retorna: cherry
     ```
+
+---
+
+## Loops nos itens da Tuple
+
+É possível _percorrer os itens_ da **Tuple** usando um _loop_ ``for``.
+
+```
+# Iterando pelos itens e imprimindo os valores
+
+thistuple = ("apple", "banana", "cherry")
+for x in thistuple:
+    print(x)
+
+"""Retorna:
+    apple
+    banana
+    cherry
+"""
+```
+
+## Loops consultando os números de índice
+
+É possível _percorrer os itens_ da **Tuple** consultando seu _número de índice_.
+
+- Utilizando as **funções** ``range()`` e ``len()`` para _criar um iterável_ adequado:
+    ```
+    # Imprimindo todos os itens referindo-se ao seu número de índice
+
+    thistuple = ("apple", "banana", "cherry")
+
+    for i in range(len(thistuple)):
+        print(thistuple[i])
+
+    """Retorna:
+        apple
+        banana
+        cherry
+    """
+    ```
+
+## Usando um loop while
+
+É possível _percorrer os itens_ da **Tuple** usando um _loop_ ``while``.
+
+- Utilize a **função** ``len()`` para determinar o _comprimento da Tuple_, então _comece_ em **0** e _percorra os itens da Tuple_ consultando seus **índices**:
+    ```
+    # Imprimindo todos os itens, usando um loop 'while' para percorrer todos os números de índice
+
+    thistuple = ("apple", "banana", "cherry")
+
+    i = 0
+    while i < len(thistuple):
+        print(thistuple[i])
+        i = i + 1
+
+    """Retorna:
+        apple
+        banana
+        cherry
+    """
+    ```
+
+    > **Nota**: Lembre-se de _aumentar o índice_ em ``1`` após **cada iteração**.
 
 ---
 
