@@ -34,7 +34,7 @@
 - [Juntando duas Tuples](#juntando-duas-tuples)
 - [Multiplicar Tuples](#multiplicar-tuples)
 ---
-- []()
+- [Métodos de Tuple](#métodos-de-tuple)
 
 ---
 
@@ -479,4 +479,11 @@ print(mytuple)  # Retorna: ('apple', 'banana', 'cherry', 'apple', 'banana', 'che
 
 ---
 
-## 
+## Métodos de Tuple
+
+Python possui _dois métodos integrados_ que podem ser usados em **Tuples**.
+
+- ``count()``: Retorna o número de vezes que um _valor especificado_ ocorre em uma **Tuple**.
+- ``index()``: Pesquisa na **Tuple** um _valor especificado_ e retorna a posição onde ele foi encontrado.
+
+---
