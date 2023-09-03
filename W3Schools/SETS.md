@@ -16,6 +16,10 @@
 - [Acessar itens](#acessar-itens)
 - [Alterar itens](#alterar-itens)
 ---
+- [Adicionar itens](#adicionar-itens)
+- [Adicionar Sets](#adicionar-sets)
+- [Adicione qualquer iterável](#adicione-qualquer-iterável)
+---
 - []()
 
 ---
@@ -188,6 +192,51 @@ Não é possível _acessar itens_ de um **Set** consultando um _índice_ ou uma 
 ## Alterar itens
 
 > Depois que um **Set** é criado, não é possível _alterar seus itens_, mas poderá _adicionar novos itens_.
+
+---
+
+## Adicionar itens
+
+> Depois que um **Set** é criado, não é possível _alterar seus itens_, mas poderá _adicionar novos itens_.
+
+- Para _adicionar um item_ a um **Set**, basta utilizar o **método** ``add()``:
+    ```
+    # Adicionando um item a um Set, usando o método 'add()'
+
+    thisset = {"apple", "banana", "cherry"}
+    thisset.add("orange")
+
+    print(thisset)  # Retorna: {'orange', 'apple', 'cherry', 'banana'}
+    ```
+
+## Adicionar Sets
+
+- Para _adicionar itens_ de **outro Set** ao **Set atual**, basta utilizar o **método** ``update()``:
+    ```
+    # Adicionando elementos de 'tropical' em 'thisset'
+
+    thisset = {"apple", "banana", "cherry"}
+    tropical = {"pineapple", "mango", "papaya"}
+
+    thisset.update(tropical)
+
+    print(thisset)  # Retorna: {'apple', 'mango', 'cherry', 'pineapple', 'banana', 'papaya'}
+    ```
+
+## Adicione qualquer iterável
+
+O _objeto_ no **método** ``update()`` _não precisa ser_ um **Set**, pode ser _qualquer objeto iterável_ (**tuples**, **lists**, **dictionaries** etc.).
+
+```
+# Adicionando elementos de uma List ao Set
+
+thisset = {"apple", "banana", "cherry"}
+mylist = ["kiwi", "orange"]
+
+thisset.update(mylist)
+
+print(thisset)  # Retorna: {'banana', 'cherry', 'apple', 'orange', 'kiwi'}
+```
 
 ---
 
