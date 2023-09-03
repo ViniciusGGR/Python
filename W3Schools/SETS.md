@@ -28,7 +28,7 @@
 - [Mantenha SOMENTE as duplicatas](#mantenha-somente-as-duplicatas)
 - [Mantenha tudo, mas NÃO as duplicatas](#mantenha-tudo-mas-não-as-duplicatas)
 ---
-- []()
+- [Métodos Set](#métodos-set)
 
 ---
 
@@ -421,4 +421,26 @@ print(z)  # Retorna: {2, 'google', 'cherry', 'banana'}
 
 ---
 
-## 
+## Métodos Set
+
+Python possui um _conjunto_ de **métodos** integrados que podem ser usados em **Set**.
+
+- ``add()``: Adiciona um _elemento_ ao **Set**.
+- ``clear()``: Remove _todos os elementos_ do **Set**.
+- ``copy()``: Retorna uma _cópia_ do **Set**.
+- ``difference()``: Retorna um **Set** contendo a _diferença_ entre dois ou mais **Sets**.
+- ``difference_update()``: Remove os _itens_ deste **Set** que também estão incluídos em outro **Set** especificado.
+- ``discard()``: Remove o _item_ especificado.
+- ``intersection()``: Retorna um **Set**, que é a _intersecção_ de dois outros **Sets**.
+- ``intersection_update()``: Remove os _itens_ deste **Set** que não estão presentes em outro(s) **Sets** especificado(s).
+- ``isdisjoint()``: Retorna se dois **Sets** têm _intersecção_ ou **não**.
+- ``issubset()``: Retorna se outro **Set** contém este **Set** ou **não**.
+- ``issuperset()``: Retorna se este **Set** contém outro **Set** ou **não**.
+- ``pop()``: Remove um _elemento_ do **Set**.
+- ``remove()``: Remove o _elemento_ especificado.
+- ``symmetric_difference()``: Retorna um **Set** com as _diferenças simétricas_ de dois **Sets**.
+- ``symmetric_difference_update()``: Insere as _diferenças simétricas_ deste **Set** e de outro.
+- ``union()``: Retorne um **Set** contendo a _união_ de **Sets**.
+- ``update()``: Atualize o **Set** com a _união_ deste **Set** e de outros.
+
+---
