@@ -20,6 +20,8 @@
 - [Adicionar Sets](#adicionar-sets)
 - [Adicione qualquer iterável](#adicione-qualquer-iterável)
 ---
+- [Remover item](#remover-item)
+---
 - []()
 
 ---
@@ -236,6 +238,64 @@ mylist = ["kiwi", "orange"]
 thisset.update(mylist)
 
 print(thisset)  # Retorna: {'banana', 'cherry', 'apple', 'orange', 'kiwi'}
+```
+
+---
+
+## Remover item
+
+- Para _remover um item_ de um **Set**, basta utilizar o **método** ``remove()`` ou ``discard()``:
+    ```
+    # Removendo "banana" usando o método 'remove()'
+
+    thisset = {"apple", "banana", "cherry"}
+    thisset.remove("banana")
+
+    print(thisset)  # Retorna: {'apple', 'cherry'}
+    ```
+
+    > **Nota**: Se o **item** a ser _removido não existir_, o ``remove()`` gerará um **erro**.
+
+    ```
+    # Removendo "banana" usando o método 'discard()'
+
+    thisset = {"apple", "banana", "cherry"}
+    thisset.discard("banana")
+
+    print(thisset)  # Retorna: {'apple', 'cherry'}
+    ```
+
+    > **Nota**: Se o **item** a ser _removido não existir_, o ``discard()`` **NÃO** gerará um **erro**.
+
+Também é possível usar o **método** ``pop()`` para _remover um item_, mas esse **método** _removerá um item aleatório_, portanto não será possível ter certeza de qual _item será removido_.
+
+- O _valor de retorno_ do **método** ``pop()`` é o _item removido_:
+    ```
+    thisset = {"apple", "banana", "cherry"}
+    x = thisset.pop()
+
+    print(x)  # Retorna: cherry (exemplo aleatório - poderia ser qualquer outro valor)
+    print(thisset)  # Retorna: {'banana', 'apple'}
+    ```
+
+    > **Nota**: Os **Sets** _não são ordenados_, portanto, ao usar o **método** ``pop()``, não se sabe qual _item será removido_.
+
+```
+# O método 'clear()' esvazia o Set
+
+thisset = {"apple", "banana", "cherry"}
+thisset.clear()
+
+print(thisset)  # Retorna: set()
+```
+
+```
+# A palavra-chave 'del' excluirá o Set completamente
+
+thisset = {"apple", "banana", "cherry"}
+del thisset
+
+print(thisset)  # Retorna: NameError: name 'thisset' is not defined
 ```
 
 ---
