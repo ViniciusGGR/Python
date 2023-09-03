@@ -13,6 +13,9 @@
 - [O construtor set()](#o-construtor-set)
 - [Coleções Python (Arrays)](#coleções-python-arrays)
 ---
+- [Acessar itens](#acessar-itens)
+- [Alterar itens](#alterar-itens)
+---
 - []()
 
 ---
@@ -151,6 +154,40 @@ Existem quatro _tipos de dados integrados_ em Python usados para **armazenar col
 - ``Dictionary``: É uma _coleção ordenada_ e **mutável**. Nenhum _membro duplicado_.
 
 > Ao escolher um _tipo de dado integrado_ para **armazenar coleções de dados** é útil compreender as _propriedades_ desse tipo. Escolher o tipo certo para uma determinado conjunto de dados pode significar retenção de significado e um aumento na eficiência ou segurança.
+
+---
+
+## Acessar itens
+
+Não é possível _acessar itens_ de um **Set** consultando um _índice_ ou uma _chave_.
+
+- É possível _percorrer os itens_ de um **Set** usando um **loop** ``for`` ou "_perguntar se um valor especificado_" está presente em um **Set** usando a _palavra-chave_ ``in``.
+    ```
+    # Fazendo um loop pelo Set e Imprimindo os valores
+    
+    thisset = {"apple", "banana", "cherry"}
+
+    for x in thisset:
+        print(x)
+
+    """Retorna:
+        apple
+        cherry
+        banana
+    """
+    ```
+
+    ```
+    # Verificando se "banana" está presente no Set
+
+    thisset = {"apple", "banana", "cherry"}
+
+    print("banana" in thisset)  # Retorna: True
+    ```
+
+## Alterar itens
+
+> Depois que um **Set** é criado, não é possível _alterar seus itens_, mas poderá _adicionar novos itens_.
 
 ---
 
