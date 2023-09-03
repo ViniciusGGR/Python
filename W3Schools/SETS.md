@@ -22,6 +22,8 @@
 ---
 - [Remover item](#remover-item)
 ---
+- [Loop Items](#loop-items)
+---
 - []()
 
 ---
@@ -296,6 +298,27 @@ thisset = {"apple", "banana", "cherry"}
 del thisset
 
 print(thisset)  # Retorna: NameError: name 'thisset' is not defined
+```
+
+---
+
+## Loop Items
+
+É possível _percorrer os itens_ definidos usando um **loop** ``for``.
+
+```
+# Fazendo um loop pelo Set e Imprimindo os valores
+
+thisset = {"apple", "banana", "cherry"}
+
+for x in thisset:
+    print(x)
+
+"""Retorna:
+    apple
+    banana
+    cherry
+"""
 ```
 
 ---
