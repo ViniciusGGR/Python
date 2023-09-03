@@ -24,6 +24,10 @@
 ---
 - [Loop Items](#loop-items)
 ---
+- [Juntando dois Sets](#juntando-dois-sets)
+- [Mantenha SOMENTE as duplicatas](#mantenha-somente-as-duplicatas)
+- [Mantenha tudo, mas NÃO as duplicatas](#mantenha-tudo-mas-não-as-duplicatas)
+---
 - []()
 
 ---
@@ -319,6 +323,100 @@ for x in thisset:
     banana
     cherry
 """
+```
+
+---
+
+## Juntando dois Sets
+
+Existem _várias maneiras_ de **unir dois ou mais Sets** em Python.
+
+- É possível usar o **método** ``union()`` que retorna um _novo_ **Set** contendo _todos os itens_ de ambos os **Sets**, ou o **método** ``update()`` que _insere todos os itens_ de um **Set** em outro:
+    ```
+    # O método 'union()' retorna um novo Set com todos os itens de ambos os Sets
+
+    set1 = {"a", "b", "c"}
+    set2 = {1, 2, 3}
+
+    set3 = set1.union(set2)
+    print(set3)  # Retorna: {'b', 2, 'a', 'c', 3, 1}
+    ```
+
+    ```
+    # O método 'update()' insere os itens do 'set2' no 'set1'
+
+    set1 = {"a", "b", "c"}
+    set2 = {1, 2, 3}
+
+    set1.update(set2)
+    print(set1)  # Retorna: {'c', 'a', 3, 2, 1, 'b'}
+    ```
+
+    > **Nota**: _Ambos_ ``union()`` e ``update()`` **excluirão** quaisquer _itens duplicados_.
+
+## Mantenha SOMENTE as duplicatas
+
+O **método** ``intersection_update()`` manterá apenas os _itens_ que estão presentes em **ambos os Sets**.
+
+```
+# Mantendo os itens que existem em Set 'x' e Set 'y'
+
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+x.intersection_update(y)
+
+print(x)  # Retorna: {'apple'}
+```
+
+O **método** ``intersection()`` retornará um _novo_ **Set**, que contém apenas os _itens_ que estão presentes em **ambos os Sets**.
+
+```
+# Retornando um Set que contém os itens que existem em Set 'x' e Set 'y'
+
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+z = x.intersection(y)
+
+print(z)  # Retorna: {'apple'}
+```
+
+## Mantenha tudo, mas NÃO as duplicatas
+
+- O **método** ``symmetric_difference_update()`` manterá _apenas os elementos_ que **NÃO** estão presentes em **ambos os Sets**:
+    ```
+    # Mantendo os itens que não estão presentes em ambos os Sets
+
+    x = {"apple", "banana", "cherry"}
+    y = {"google", "microsoft", "apple"}
+
+    x.symmetric_difference_update(y)
+
+    print(x)  # Retorna: {'google', 'banana', 'microsoft', 'cherry'}
+    ```
+
+- O **método** ``symmetric_difference()`` retornará um **novo Set**, que contém _apenas os elementos_ que **NÃO** estão presentes em **ambos os Sets**:
+    ```
+    x = {"apple", "banana", "cherry"}
+    y = {"google", "microsoft", "apple"}
+
+    z = x.symmetric_difference(y)
+
+    print(z)  # Retorna: {'google', 'banana', 'microsoft', 'cherry'}
+    ```
+
+> **Nota**: Os valores ``True`` e ``1`` são considerados o _mesmo valor_ em **Sets** e são tratados como _duplicados_.
+
+```
+# 'True' e '1' são considerados o mesmo valor
+
+x = {"apple", "banana", "cherry", True}
+y = {"google", 1, "apple", 2}
+
+z = x.symmetric_difference(y)
+
+print(z)  # Retorna: {2, 'google', 'cherry', 'banana'}
 ```
 
 ---
