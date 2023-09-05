@@ -13,6 +13,12 @@
 - [O construtor dict()](#o-construtor-dict)
 - [Coleções Python (Arrays)](#coleções-python-arrays)
 ---
+- [Acessando Itens](#acessando-itens)
+- [Obter as Keys](#obter-as-keys)
+- [Obter os Values](#obter-os-values)
+- [Obter Items](#obter-items)
+- [Verifique se a Key existe](#verifique-se-a-key-existe)
+---
 - []()
 
 ---
@@ -162,6 +168,197 @@ Existem quatro _tipos de dados integrados_ em Python usados para **armazenar col
 - ``Dictionary``: É uma _coleção ordenada_ e **mutável**. Nenhum _membro duplicado_.
 
 > Ao escolher um _tipo de dado integrado_ para **armazenar coleções de dados** é útil compreender as _propriedades_ desse tipo. Escolher o tipo certo para uma determinado conjunto de dados pode significar retenção de significado e um aumento na eficiência ou segurança.
+
+---
+
+## Acessando Itens
+
+É possível _**acessar os itens** de um Dictionary_ referindo-se ao **nome da chave**, entre _colchetes_ ``[]``.
+
+```
+# Obtendo o valor da chave 'model'
+
+thisdict = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+
+x = thisdict["model"]
+print(x)  # Retorna: Mustang
+```
+
+- Existe também um **método** chamado ``get()`` que "retorna" o mesmo _resultado_:
+    ```
+    # Obtendo o valor da chave 'model'
+
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    x = thisdict.get("model")
+    print(x)  # Retorna: Mustang
+    ```
+
+## Obter as Keys
+
+O **método** ``keys()`` retornará uma _lista_ de **todas as chaves** do _Dictionary_.
+
+```
+# Obtendo uma lista de chaves
+
+thisdict = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+
+x = thisdict.keys()
+print(x)  # Retorna: dict_keys(['brand', 'model', 'year'])
+```
+
+- A _lista_ de **chaves** é uma _visualização do **Dictionary**_, o que significa que quaisquer **alterações** feitas no _Dictionary_ serão _refletidas na **lista de chaves**_:
+    ```
+    # Adicionando um novo item ao Dictionary original e visualizando a lista de chaves também sendo atualizada
+
+    car = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    x = car.keys()
+    print(x)  # Retorna: dict_keys(['brand', 'model', 'year'])
+
+    car["color"] = "white"
+
+    print(x)  # Retorna: dict_keys(['brand', 'model', 'year', 'color'])
+    ```
+
+## Obter os Values
+
+O **método** ``values()`` retornará uma _lista_ de **todas os valores** do _Dictionary_.
+
+```
+# Obtendo uma lista dos valores
+
+thisdict = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+
+x = thisdict.values()
+print(x)  # Retorna: dict_values(['Ford', 'Mustang', 1964])
+```
+
+- A _lista_ de **valores** é uma _visualização do **Dictionary**_, o que significa que quaisquer **alterações** feitas no _Dictionary_ serão _refletidas na **lista de valores**_:
+    ```
+    # Fazendo uma alteração no Dictionary original e visualizando a lista de valores também sendo atualizada
+
+    car = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    x = car.values()
+    print(x)  # Retorna: dict_values(['Ford', 'Mustang', 1964])
+
+    car["year"] = 2020
+
+    print(x)  # Retorna: dict_values(['Ford', 'Mustang', 2020])
+    ```
+
+    Adicionando um **novo item** ao _Dictionary_ original e visualizando a **lista de valores** também sendo atualizada.
+
+    ```
+    car = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    x = car.values()
+    print(x)  # Retorna: dict_values(['Ford', 'Mustang', 1964])
+
+    car["color"] = "red"
+
+    print(x)  # Retorna: dict_values(['Ford', 'Mustang', 1964, 'red'])
+    ```
+
+## Obter Items
+
+O **método** ``items()`` retornará **cada item** de um _Dictionary_, como **tuples** em uma **lista**.
+
+```
+# Obtendo uma lista dos pares chave-valor
+
+thisdict = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+
+x = thisdict.items()
+print(x)  # Retorna: dict_items([('brand', 'Ford'), ('model', 'Mustang'), ('year', 1964)])
+```
+
+- A _lista_ retornada é uma _visualização dos itens do **Dictionary**_, o que significa que quaisquer **alterações** feitas no _Dictionary_ serão _refletidas na **lista de itens**_:
+    ```
+    # Fazendo uma alteração no Dictionary original e visualizando a lista de itens também sendo atualizada
+
+    car = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    x = car.items()
+    print(x)  # Retorna: dict_items([('brand', 'Ford'), ('model', 'Mustang'), ('year', 1964)])
+
+    car["year"] = 2020
+
+    print(x)  dict_items([('brand', 'Ford'), ('model', 'Mustang'), ('year', 2020)])
+    ```
+
+    Adicionando um **novo item** ao _Dictionary_ original e visualizando a **lista de itens** também sendo atualizada.
+
+    ```
+    car = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    x = car.items()
+    print(x)  # Retorna: dict_items([('brand', 'Ford'), ('model', 'Mustang'), ('year', 1964)])
+
+    car["color"] = "red"
+
+    print(x)  dict_items([('brand', 'Ford'), ('model', 'Mustang'), ('year', 1964), ('color', 'red')])
+    ```
+
+## Verifique se a Key existe
+
+Para _determinar_ se uma **chave especificada** está _presente_ em um _Dictionary_, basta utilizar a **palavra-chave** ``in``.
+
+```
+# Verificando se 'model' está presente no Dictionary
+
+thisdict = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+
+if "model" in thisdict:
+    print("Yes, 'model' is one of the keys in the 'thisdict' dictionary")
+
+# Retorna: Yes, 'model' is one of the keys in the thisdict dictionary
+```
 
 ---
 
