@@ -19,6 +19,9 @@
 - [Obter Items](#obter-items)
 - [Verifique se a Key existe](#verifique-se-a-key-existe)
 ---
+- [Mudar valores](#mudar-valores)
+- [Atualizar Dictionary](#atualizar-dictionary)
+---
 - []()
 
 ---
@@ -359,6 +362,48 @@ if "model" in thisdict:
 
 # Retorna: Yes, 'model' is one of the keys in the thisdict dictionary
 ```
+
+---
+
+## Mudar valores
+
+- É possível _alterar o valor_ de um _item especificado_ consultando seu **nome chave**:
+    ```
+    # Alterando o 'year' para 2018
+
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+    thisdict["year"] = 2018
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 2018}
+    ```
+
+## Atualizar Dictionary
+
+O **método** ``update()`` _atualizará o Dictionary_ com os **itens** do _argumento_ fornecido.
+
+- O _argumento_ deve ser um _Dictionary_ ou um **objeto iterável** com pares _chave:valor_:
+    ```
+    # Atualizando o 'year' do carro usando o método 'update()'
+
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+    thisdict.update({"year": 2020})
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 2020}
+    ```
 
 ---
 
