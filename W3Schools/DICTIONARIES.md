@@ -31,6 +31,9 @@
 ---
 - [Copie um Dictionary](#copie-um-dictionary)
 ---
+- [Dictionaries aninhados](#dictionaries-aninhados)
+- [Acessar itens em Dictionaries aninhados](#acessar-itens-em-dictionaries-aninhados)
+---
 - []()
 
 ---
@@ -667,6 +670,84 @@ Ao "_percorrer_" um _Dictionary_, o **valor de retorno** são as _**chaves** do 
 
     print(mydict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
     ```
+
+---
+
+## Dictionaries aninhados
+
+Um _Dictionary_ pode **conter** _Dictionaries_, isso é chamado de **Dictionaries aninhados**.
+
+```
+# Criando um Dictionary que contém três Dictionaries
+
+myfamily = {
+    "child1" : {
+        "name" : "Emil",
+        "year" : 2004
+    },
+    "child2" : {
+        "name" : "Tobias",
+        "year" : 2007
+    },
+    "child3" : {
+        "name" : "Linus",
+        "year" : 2011
+    }
+}
+
+print(myfamily)  # Retorna: {'child1': {'name': 'Emil', 'year': 2004}, 'child2': {'name': 'Tobias', 'year': 2007}, 'child3': {'name': 'Linus', 'year': 2011}}
+```
+
+- É possível _adicionar_ **três Dictionaries** a um _novo_ **Dictionary**:
+    ```
+    # Criando três Dictionaries e, em seguida, criando um Dictionary que conterá os outros três Dictionaries
+
+    child1 = {
+        "name": "Emil",
+        "year": 2004
+    }
+
+    child2 = {
+        "name": "Tobias",
+        "year": 2007
+    }
+
+    child3 = {
+        "name": "Linus",
+        "year": 2011
+    }
+
+    myfamily = {
+        "child1": child1,
+        "child2": child2,
+        "child3": child3
+    }
+
+    print(myfamily)  # Retorna: {'child1': {'name': 'Emil', 'year': 2004}, 'child2': {'name': 'Tobias', 'year': 2007}, 'child3': {'name': 'Linus', 'year': 2011}}
+    ```
+
+## Acessar itens em Dictionaries aninhados
+
+Para _acessar itens_ de um **Dictionary aninhado**, basta usar o _nome dos Dictionaries_, começando pelo _Dictionary_ **externo**.
+
+```
+myfamily = {
+    "child1" : {
+        "name" : "Emil",
+        "year" : 2004
+    },
+    "child2" : {
+        "name" : "Tobias",
+        "year" : 2007
+    },
+    "child3" : {
+        "name" : "Linus",
+        "year" : 2011
+    }
+}
+
+print(myfamily["child2"]["name"])  # Retorna: Tobias
+```
 
 ---
 
