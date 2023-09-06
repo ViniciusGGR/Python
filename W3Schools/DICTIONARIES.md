@@ -29,6 +29,8 @@
 ---
 - [Loop em um Dictionary](#loop-em-um-dictionary)
 ---
+- [Copie um Dictionary](#copie-um-dictionary)
+---
 - []()
 
 ---
@@ -628,6 +630,42 @@ Ao "_percorrer_" um _Dictionary_, o **valor de retorno** são as _**chaves** do 
         model Mustang
         year 1964
     """
+    ```
+
+---
+
+## Copie um Dictionary
+
+**Não** é possível _copiar um Dictionary_ simplesmente digitando ``dict2 = dict1``, porque: ``dict2`` será apenas uma _referência_, e as **alterações** feitas em ``dict1`` também **serão feitas** _automaticamente_ em ``dict2``.
+
+- Uma maneira de fazer uma _cópia_ é usar o **método** _Dictionary_ integrado ``copy()``:
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+    mydict = thisdict.copy()
+
+    print(mydict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+    ```
+
+- Outra maneira de fazer uma _cópia_ é usar a **função** integrada ``dict()``:
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+    mydict = dict(thisdict)
+
+    print(mydict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
     ```
 
 ---
