@@ -34,7 +34,7 @@
 - [Dictionaries aninhados](#dictionaries-aninhados)
 - [Acessar itens em Dictionaries aninhados](#acessar-itens-em-dictionaries-aninhados)
 ---
-- []()
+- [Métodos Dictionary](#métodos-dictionary)
 
 ---
 
@@ -751,4 +751,20 @@ print(myfamily["child2"]["name"])  # Retorna: Tobias
 
 ---
 
-## 
+## Métodos Dictionary
+
+Python possui um **conjunto de métodos** integrados que podem ser usados em _Dictionaries_.
+
+- ``clear()``: Remove todos os elementos do _Dictionary_.
+- ``copy()``: Retorna uma cópia do _Dictionary_.
+- ``fromkeys()``: Retorna um _Dictionary_ com as chaves e o valor especificados.
+- ``get()``: Retorna o valor da chave especificada.
+- ``items()``: Retorna uma lista contendo uma _Tuple_ para cada par de chave-valor.
+- ``keys()``: Retorna uma _List_ contendo as chaves do _Dictionary_.
+- ``pop()``: Remove o elemento com a chave especificada.
+- ``popitem()``: Remove o último par de chave-valor inserido.
+- ``setdefault()``: Retorna o valor da chave especificada. Se a chave não existir: insira a chave, com o valor especificado.
+- ``update()``: Atualiza o _Dictionary_ com os pares chave-valor especificados.
+- ``values()``: Retorna uma _List_ de todos os valores do _Dictionary_.
+
+---
