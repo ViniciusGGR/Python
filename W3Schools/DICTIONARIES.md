@@ -22,6 +22,9 @@
 - [Mudar valores](#mudar-valores)
 - [Atualizar Dictionary](#atualizar-dictionary)
 ---
+- [Adicionando itens](#adicionando-itens)
+- [Atualizar Dictionary](#atualizar-dictionary-1)
+---
 - []()
 
 ---
@@ -403,6 +406,46 @@ O **método** ``update()`` _atualizará o Dictionary_ com os **itens** do _argum
     thisdict.update({"year": 2020})
 
     print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 2020}
+    ```
+
+---
+
+## Adicionando itens
+
+- A _adição_ de um _item ao Dictionary_ é feita usando uma **nova chave** de _índice_ e **atribuindo um valor** a ela:
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+    thisdict["color"] = "red"
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964, 'color': 'red'}
+    ```
+
+## Atualizar Dictionary
+
+O **método** ``update()`` _atualizará o Dictionary_ com os _itens_ de um determinado **argumento**. Se o _item_ não existir, o _item_ será adicionado.
+
+- O **argumento** deve ser um _Dictionary_ ou um **objeto iterável** com pares _chave:valor_:
+    ```
+    # Adicionando um item 'color' ao Dictionary usando o método 'update()'
+
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+    thisdict.update({"color": "red"})
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964, 'color': 'red'}
     ```
 
 ---
