@@ -27,6 +27,8 @@
 ---
 - [Removendo Itens](#removendo-itens)
 ---
+- [Loop em um Dictionary](#loop-em-um-dictionary)
+---
 - []()
 
 ---
@@ -530,6 +532,102 @@ Existem _vários métodos_ para **remover itens** de um _Dictionary_.
     thisdict.clear()
 
     print(thisdict)  # Retorna: {}
+    ```
+
+---
+
+## Loop em um Dictionary
+
+É possível "_percorrer_" um _Dictionary_ usando um **loop** ``for``.
+
+Ao "_percorrer_" um _Dictionary_, o **valor de retorno** são as _**chaves** do Dictionary_, mas também existem **métodos** para **retornar** os _valores_.
+
+- Imprimindo todos os _nomes de chaves_ do _Dictionary_, um por um:
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    for x in thisdict:
+        print(x)
+
+    """Retorna:
+        brand
+        model
+        year
+    """
+    ```
+
+- Imprimindo todos os _valores_ do _Dictionary_, um por um:
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    for x in thisdict:
+        print(thisdict[x])
+    
+    """Retorna:
+        Ford
+        Mustang
+        1964
+    ```
+
+- O **método** ``values()`` também pode ser usado para **retornar** _valores_ de um _Dictionary_:
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    for x in thisdict.values():
+        print(x)
+
+    """Retorna:
+        Ford
+        Mustang
+        1964
+    """
+    ```
+
+- O **método** ``keys()`` também pode ser usado para **retornar** as _chaves_ de um _Dictionary_:
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    for x in thisdict.keys():
+        print(x)
+
+    """Retorna:
+        brand
+        model
+        year
+    ```
+
+- Fazendo um **loop** por _chaves_ e _valores_, usando o **método** ``items()``:
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    for x, y in thisdict.items():
+        print(x, y)
+
+    """Retorna:
+        brand Ford
+        model Mustang
+        year 1964
+    """
     ```
 
 ---
