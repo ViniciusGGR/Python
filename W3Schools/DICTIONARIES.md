@@ -25,6 +25,8 @@
 - [Adicionando itens](#adicionando-itens)
 - [Atualizar Dictionary](#atualizar-dictionary-1)
 ---
+- [Removendo Itens](#removendo-itens)
+---
 - []()
 
 ---
@@ -446,6 +448,88 @@ O **método** ``update()`` _atualizará o Dictionary_ com os _itens_ de um deter
     thisdict.update({"color": "red"})
 
     print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964, 'color': 'red'}
+    ```
+
+---
+
+## Removendo Itens
+
+Existem _vários métodos_ para **remover itens** de um _Dictionary_.
+
+- O **método** ``pop()`` _remove o item_ com o **nome de chave** especificado:
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+    thisdict.pop("model")
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'year': 1964}
+    ```
+
+- O **método** ``popitem()`` _remove o **último** item_ inserido:
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+    thisdict.popitem()
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang'}
+    ```
+
+- A _palavra-chave_ ``del`` _remove o item_ com o **nome de chave** especificado:
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+    del thisdict["model"]
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'year': 1964}
+    ```
+
+    A _palavra-chave_ ``del`` também pode _excluir completamente o Dictionary_:
+
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+    del thisdict
+
+    print(thisdict)  # Retorna: NameError: name 'thisdict' is not defined
+    ```
+
+- O **método** ``clear()`` _esvazia o Dictionary_:
+    ```
+    thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+
+    print(thisdict)  # Retorna: {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+    thisdict.clear()
+
+    print(thisdict)  # Retorna: {}
     ```
 
 ---
