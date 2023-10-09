@@ -88,18 +88,18 @@ Python é uma linguagem de programação popular.
 
 ## Python MySQL - W3Schools
 
-- [Get Started]()
-- [Create Database]()
-- [Create Table]()
-- [Insert]()
-- [Select]()
-- [Where]()
-- [Order By]()
-- [Delete]()
-- [Drop Table]()
-- [Update]()
-- [Limit]()
-- [Join]()
+- [Get Started](/W3Schools-MySQL/GET_STARTED.md)
+- [Create Database](/W3Schools-MySQL/CREATE_DATABASE.md)
+- [Create Table](/W3Schools-MySQL/CREATE_TABLE.md)
+- [Insert](/W3Schools-MySQL/INSERT.md)
+- [Select](/W3Schools-MySQL/SELECT.md)
+- [Where](/W3Schools-MySQL/WHERE.md)
+- [Order By](/W3Schools-MySQL/ORDER_BY.md)
+- [Delete](/W3Schools-MySQL/DELETE.md)
+- [Drop Table](/W3Schools-MySQL/DROP_TABLE.md)
+- [Update](/W3Schools-MySQL/UPDATE.md)
+- [Limit](/W3Schools-MySQL/LIMIT.md)
+- [Join](/W3Schools-MySQL/JOIN.md)
 
 ---
 
